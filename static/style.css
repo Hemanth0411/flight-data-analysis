@@ -1,0 +1,143 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f5f7fa; 
+    color: #333; 
+    margin: 0;
+    padding: 2em; 
+    box-sizing: border-box;
+}
+
+.content-card {
+    max-width: 960px; 
+    margin: 0 auto; 
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+h1, h2 {
+    color: #1E3A8A; 
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+    color: #4B5563; 
+    max-width: 65ch; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+    align-items: end;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: 600;
+    color: #374151; 
+    grid-column: span 2; 
+}
+label[for="origin"], label[for="destination"], label[for="date"] {
+    grid-column: auto;
+}
+input[type="text"], input[type="date"] {
+    margin-top: -1rem; 
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 0.75em 1em;
+    border: 1.5px solid #cbd5e1; 
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    color: #111827; 
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #1E3A8A; 
+    box-shadow: 0 0 6px rgba(30, 58, 138, 0.4);
+}
+
+button[type="submit"] {
+    grid-column: 1 / -1; 
+    background-color: #1E3A8A; 
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85em 1.25em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    margin-top: 1em;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #153e75; 
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+    outline: none;
+}
+
+
+.results-container {
+    border-top: 1px solid #e5e7eb; 
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 800px) {
+    .results-container {
+        display: flex;
+        gap: 2.5rem; 
+        align-items: flex-start; 
+    }
+    .insights-column {
+        flex: 1; 
+        min-width: 0;
+    }
+    .chart-column {
+        flex: 1; 
+        min-width: 0;
+    }
+    .insights-column p {
+        text-align: left; 
+    }
+}
+
+
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr; 
+    }
+    label[for="origin"], label[for="destination"], label[for="date"] {
+        grid-column: 1 / -1;
+    }
+    input[type="text"], input[type="date"] {
+        margin-top: 0;
+    }
+}

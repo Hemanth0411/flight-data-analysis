@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Market Demand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="content-card">
+        <h1>Airline Booking Market Demand Tool</h1>
+        <p>Enter an Australian flight route and date to see demand trends.</p>
+
+        <form method="POST">
+            <datalist id="australian-airports">
+                <option value="SYD">Sydney</option>
+                <option value="MEL">Melbourne</option>
+                <option value="BNE">Brisbane</option>
+                <option value="PER">Perth</option>
+                <option value="ADL">Adelaide</option>
+                <option value="CNS">Cairns</option>
+                <option value="HBA">Hobart</option>
+                <option value="DRW">Darwin</option>
+                <option value="CBR">Canberra</option>
+                <option value="OOL">Gold Coast</option>
+            </datalist>
+
+            <label for="origin">Origin:</label>
+            <input type="text" name="origin" required list="australian-airports" placeholder="e.g., SYD">
+
+            <label for="destination">Destination:</label>
+            <input type="text" name="destination" required list="australian-airports" placeholder="e.g., MEL">
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" required>
+
+            <button type="submit">Analyze Demand</button>
+        </form>
+
+        {% if insights or chart_div %}
+        <div class="results-container">
+            
+            {% if insights %}
+            <div class="insights-column">
+                <h2>Market Insights</h2>
+                <p>{{ insights | safe }}</p>
+            </div>
+            {% endif %}
+
+            {% if chart_div %}
+            <div class="chart-column">
+                <h2>Price Visualization</h2>
+                <div>{{ chart_div | safe }}</div>
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+
+    </main> 
+</body>
+</html>
