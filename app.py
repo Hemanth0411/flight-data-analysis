@@ -63,7 +63,7 @@ def get_demand_insights(df):
         return "No flight data available to analyze."
 
     genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.0-flash')
 
     prompt = f"""
     As a travel market analyst for a group of Australian hostels, analyze the following airline booking data and provide a short summary of market demand.

@@ -1,8 +1,24 @@
 # Environment
 venv/
+.venv/
+env/
+ENV/
 .env
+.env.*
 secrets.txt
 
 # Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
